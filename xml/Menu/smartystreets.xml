@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<menu>
+    <item>
+        <path>civicrm/admin/setting/smartystreets</path>
+        <title>SmartyStreets</title>
+        <page_callback>CRM_Admin_Form_Setting_SmartyStreets</page_callback>
+        <access_arguments>administer CiviCRM</access_arguments>
+    </item>
+    <item>
+        <path>civicrm/admin/setting/smartystreets_lists</path>
+        <title>SmartyStreets Lists Export and Import</title>
+        <page_callback>CRM_Admin_Form_Lists</page_callback>
+        <access_arguments>administer CiviCRM</access_arguments>
+    </item>
+    <item>
+    	 <path>civicrm/admin/setting/smartystreets_download_csv</path>
+        <title>SmartyStreets CSV Download</title>
+        <page_callback>CRM_Admin_Page_Download</page_callback>
+        <access_arguments>administer CiviCRM</access_arguments>
+    </item>
+    	
+</menu>
