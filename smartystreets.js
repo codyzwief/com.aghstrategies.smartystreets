@@ -19,7 +19,6 @@ function checkScripts(){
 	
 function loadScripts(loaded){
 	if (loaded != 1){
-		alert(loaded);
 	  cj.getScript(CRM.SmartyStreets.plugin)
 			.done(function(){
 				cj.getScript(CRM.SmartyStreets.helper)
@@ -37,7 +36,7 @@ function buildAddresses(){
 	  var pre = id.split("street_address");
 	  var prefix = pre[0];
 	  var postfix = pre[1];
-	  if(prefix.indexOf("address") >= 0){
+	  if(prefix.indexOf("address") >= 0 || prefix.indexOf("billing") >= 0){
 	  	var state = "state_province_id";
 	  } else {
 	  	var state = "state_province";
@@ -72,15 +71,17 @@ function loadSmartyStreets(){
 	  });
 liveaddress.on("Completed", function(event, data, previousHandler){
 	if(cj(".crm_postal_code_suffix").length > 0 && cj('.crm_postal_code').val().length > 6){
-		//alert("suffix");
 		 cj(".crm_postal_code_suffix").val(cj(".crm_postal_code").val().slice(-4));
 	   cj(".crm_postal_code").val(cj(".crm_postal_code").val().slice(0,5));
 	   previousHandler(event, data);
 	 }
 });
 cj(window).trigger('resize');
-cj.ajaxSetup({ cache: true });
-abbreviate();
+
+cj("select").each(function(){
+  abbreviate();	
+});
+
 cj("form").submit(function(){
 	idSwitch();
 });
