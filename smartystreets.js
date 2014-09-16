@@ -36,7 +36,7 @@ function buildAddresses(){
 	  var pre = id.split("street_address");
 	  var prefix = pre[0];
 	  var postfix = pre[1];
-	  if(prefix.indexOf("address") >= 0){
+	  if(prefix.indexOf("address") >= 0 || prefix.indexOf("billing") >= 0){
 	  	var state = "state_province_id";
 	  } else {
 	  	var state = "state_province";
