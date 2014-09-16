@@ -19,7 +19,6 @@ function checkScripts(){
 	
 function loadScripts(loaded){
 	if (loaded != 1){
-		alert(loaded);
 	  cj.getScript(CRM.SmartyStreets.plugin)
 			.done(function(){
 				cj.getScript(CRM.SmartyStreets.helper)
