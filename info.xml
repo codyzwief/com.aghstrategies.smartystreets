@@ -3,7 +3,7 @@
   <file>smartystreets</file>
   <name>SmartyStreets to CiviCRM</name>
   <description>implements smartystreets api into civicrm</description>
-  <license>>AGPL-3.0</license>
+  <license>AGPL-3.0</license>
   <maintainer>
     <author>Tyrell Cook</author>
     <email>tyrell@aghstrategies.com</email>
