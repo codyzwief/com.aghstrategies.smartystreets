@@ -11,7 +11,7 @@ class CRM_SmartyStreets_Utils {
   public static function addSmartyStreetsSettings($mappings = null) {
     $var = CRM_Core_Config::singleton();
     $url = $var->extensionsURL;
-    $plugin = $url."com.aghstrategies.smartystreets/liveaddress.jquery.js";
+    $plugin = CRM_Core_Resources::singleton()->getUrl("com.aghstrategies.smartystreets", "liveaddress.jquery.js", true);
     $helper = "//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/2.4/jquery.liveaddress.min.js";
     /*** Get state Abbreviations ***/
     $sql = "SELECT abbreviation, name FROM civicrm_state_province WHERE country_id = 1228";
