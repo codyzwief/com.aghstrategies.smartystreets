@@ -12,7 +12,7 @@ class CRM_SmartyStreets_Utils {
     $var = CRM_Core_Config::singleton();
     $url = $var->extensionsURL;
     $plugin = CRM_Core_Resources::singleton()->getUrl("com.aghstrategies.smartystreets", "liveaddress.jquery.js", true);
-    $helper = "//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/2.4/jquery.liveaddress.min.js";
+    $helper = "//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/3.2/jquery.liveaddress.min.js";
     /*** Get state Abbreviations ***/
     $sql = "SELECT abbreviation, name FROM civicrm_state_province WHERE country_id = 1228";
     $dao = CRM_Core_DAO::executeQuery($sql);
@@ -58,7 +58,7 @@ class CRM_SmartyStreets_Utils {
    * Add the liveaddress widget to the form.
    */
   public static function addSmartyStreetsWidget() {
-    CRM_Core_Resources::singleton()->addScriptUrl('//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/2.4/jquery.liveaddress.min.js', 33, 'html-header');
+    CRM_Core_Resources::singleton()->addScriptUrl('//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/3.2/jquery.liveaddress.min.js', 33, 'html-header');
     CRM_Core_Resources::singleton()->addScriptFile('com.aghstrategies.smartystreets', 'smartystreets.js', 10, 'page-footer');
   }
 
