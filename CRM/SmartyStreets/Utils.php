@@ -34,13 +34,19 @@ class CRM_SmartyStreets_Utils {
       }
     }
 
-    CRM_Core_Resources::singleton()->addSetting(array('SmartyStreets' => array(
+    $config = array(
       'settings' => $settings,
       'json_abbreviate' => $abbrevate,
       'json_states' => $stateIDs,
       'plugin'=> $plugin,
       'helper' => $helper,
-    )));
+    );
+
+    if ($mappings) {
+      $config['Mappings'] = $mappings;
+    }
+
+    CRM_Core_Resources::singleton()->addSetting(array('SmartyStreets' => $config));
   }
 
 
