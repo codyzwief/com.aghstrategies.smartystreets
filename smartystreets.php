@@ -3,7 +3,9 @@
 require_once 'smartystreets.civix.php';
 
 function smartystreets_civicrm_buildForm($formName, &$form){
-  CRM_SmartyStreets_Utils::addSmartyStreetsWidget();
+  if ($formName != "CRM_Contribute_Form_Contribution_Confirm") {
+    CRM_SmartyStreets_Utils::addSmartyStreetsWidget();
+  }
 }
 
 function smartystreets_civicrm_alterContent( &$content, $context, $tplName, &$object ) {
