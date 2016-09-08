@@ -8,7 +8,7 @@ class CRM_SmartyStreets_Utils {
    *
    * @param null $mappings
    */
-  public static function addSmartyStreetsSettings($mappings = null) {
+  public static function addSmartyStreetsSettings($mappings = null, $customSettings = array()) {
     $var = CRM_Core_Config::singleton();
     $url = $var->extensionsURL;
     $plugin = CRM_Core_Resources::singleton()->getUrl("com.aghstrategies.smartystreets", "liveaddress.jquery.js", true);
@@ -32,6 +32,10 @@ class CRM_SmartyStreets_Utils {
       if($value == ""){
         $settings[$setting] = 0;
       }
+    }
+
+    if(!empty($customSettings)) {
+      $settings = array_merge($settings, $customSettings);
     }
 
     $config = array(
